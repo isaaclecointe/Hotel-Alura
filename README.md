@@ -18,7 +18,7 @@
 - Java
 - Eclipse
 - Biblioteca JCalendar
-- MySql
+- PostgreSQL
 - Plugin WindowBuilder </br>
 
 ---
