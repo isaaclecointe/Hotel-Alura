@@ -2,13 +2,13 @@ package jdbc.controller;
 
 import java.sql.Connection;
 
+
 import java.sql.Date;
 import java.util.List;
 
 import jdbc.dao.HuespedesDAO;
 import jdbc.factory.ConnectionFactory;
 import jdbc.modelo.Huespedes;
-import jdbc.modelo.Reservas;
 
 public class HuespedesController {
 	private HuespedesDAO huespedesDAO;

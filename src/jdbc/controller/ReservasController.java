@@ -1,15 +1,12 @@
 package jdbc.controller;
 
 import java.sql.Connection;
+
 import java.sql.Date;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.List;
 
 import jdbc.dao.ReservasDAO;
 import jdbc.factory.ConnectionFactory;
-import jdbc.modelo.Huespedes;
 import jdbc.modelo.Reservas;
 
 

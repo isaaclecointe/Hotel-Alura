@@ -2,6 +2,7 @@ package views;
 
 import java.awt.EventQueue;
 
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -19,14 +20,11 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import java.awt.Font;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import java.awt.SystemColor;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.text.Format;
-import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
 import javax.swing.SwingConstants;
 import javax.swing.JSeparator;
@@ -42,7 +40,6 @@ public class RegistroHuesped extends JFrame {
 	private JDateChooser txtFechaN;
 	private JComboBox<Format> txtNacionalidad;
 	private HuespedesController huespedesController;
-	private ReservasController reservasController;
 	private JLabel labelExit;
 	private JLabel labelAtras;
 	int xMouse, yMouse;
@@ -68,7 +65,7 @@ public class RegistroHuesped extends JFrame {
 	 */
 	public RegistroHuesped(int idReserva) {
 		this.huespedesController = new HuespedesController();
-		this.reservasController = new ReservasController();
+		new ReservasController();
 		
 		setIconImage(Toolkit.getDefaultToolkit().getImage(RegistroHuesped.class.getResource("/imagenes/lOGO-50PX.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

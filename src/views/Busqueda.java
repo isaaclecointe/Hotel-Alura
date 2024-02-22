@@ -15,17 +15,12 @@ import jdbc.controller.ReservasController;
 
 import javax.swing.JTable;
 import javax.swing.JTextField;
-import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.Color;
-import java.awt.SystemColor;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
-import java.awt.event.ActionListener;
-import java.util.List;
-import java.awt.event.ActionEvent;
 import javax.swing.JTabbedPane;
 import java.awt.Toolkit;
 import javax.swing.SwingConstants;
@@ -43,8 +38,6 @@ public class Busqueda extends JFrame {
 	private JTextField txtBuscar;
 	private JTable tbHuespedes;
 	private JTable tbReservas;
-	private DefaultTableModel modelo;
-	private DefaultTableModel modeloHuesped;
 	private ReservasController reservasController;
 	private HuespedesController huespedesController;
 	private BusquedaController busquedaController;
@@ -79,8 +72,8 @@ public class Busqueda extends JFrame {
 		this.busquedaController = new BusquedaController();
         busquedaController.setTablaHuespedes(tbHuespedes);
         busquedaController.setTablaReservas(tbReservas);
-        this.modeloHuesped = new DefaultTableModel();
-        this.modelo = new DefaultTableModel();
+        new DefaultTableModel();
+        new DefaultTableModel();
 
 		
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Busqueda.class.getResource("/imagenes/lupa2.png")));
@@ -172,19 +165,30 @@ public class Busqueda extends JFrame {
 		header.setBounds(0, 0, 910, 36);
 		contentPane.add(header);
 		
+		/**
+		 * Evento al hacer clic: Regresa al menú de usuario.
+		 * Si el usuario hace clic, se redirige a la ventana del Menú de Usuario.
+		 */
+		
 		JPanel btnAtras = new JPanel();
 		btnAtras.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				MenuUsuario usuario = new MenuUsuario();
 				usuario.setVisible(true);
-				dispose();				
+				dispose();			
+				
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				btnAtras.setBackground(new Color(12, 138, 199));
 				labelAtras.setForeground(Color.white);
-			}			
+			}		
+			
+			/**
+			 * Evento al salir del botón: Restaura los colores originales.
+			 */
+
 			@Override
 			public void mouseExited(MouseEvent e) {
 				 btnAtras.setBackground(Color.white);
@@ -202,6 +206,16 @@ public class Busqueda extends JFrame {
 		labelAtras.setBounds(0, 0, 53, 36);
 		btnAtras.add(labelAtras);
 		
+		
+		
+		
+		
+		/**
+		 * Evento al hacer clic: Regresa al menú de usuario.
+		 * Si el usuario hace clic, se redirige a la ventana del Menú de Usuario.
+		 */
+
+		
 		JPanel btnexit = new JPanel();
 		btnexit.addMouseListener(new MouseAdapter() {
 			@Override
@@ -211,12 +225,18 @@ public class Busqueda extends JFrame {
 				dispose();
 			}
 			@Override
-			public void mouseEntered(MouseEvent e) { //Al usuario pasar el mouse por el botón este cambiará de color
+			public void mouseEntered(MouseEvent e) { //Al usuario pasar el cursor por el botón este cambiará de color
 				btnexit.setBackground(Color.red);
 				labelExit.setForeground(Color.white);
 			}			
+
+			
+			/**
+			 * Evento al salir del botón: Restaura los colores originales.
+			 */
+			
 			@Override
-			public void mouseExited(MouseEvent e) { //Al usuario quitar el mouse por el botón este volverá al estado original
+			public void mouseExited(MouseEvent e) { 
 				 btnexit.setBackground(Color.white);
 			     labelExit.setForeground(Color.black);
 			}
@@ -239,23 +259,32 @@ public class Busqueda extends JFrame {
 		separator_1_2.setBounds(539, 159, 193, 2);
 		contentPane.add(separator_1_2);
 		
+		/**
+		 * JPanel evento al hacer click en el boton de buscar
+		 * Obtiene el texto ingresado en el campo de búsqueda "txtBuscar" 
+		 * y realiza búsquedas correspondientes.
+		 */
+		
 		JPanel btnbuscar = new JPanel();
 		btnbuscar.setBorder(new EmptyBorder(0, 0, 0, 0));
 		btnbuscar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-			//busquedaController.limpiarTabla();
+				// Obtener  el texto del campo de busqueda
 				String id = txtBuscar.getText();
-			
+				
+			//Verificar  si el campo de busqueda esta vacio
 			if(id == null || id.isEmpty()) { 
+				// Si esta vacio, llenar las tablas con todos los registros 
 			    busquedaController.llenarTablaReservas();
-			    busquedaController.llenarTablaHuespedes();
-			
+			    busquedaController.llenarTablaHuespedes(); 
 			}else{
 				try {
+					//Si se ingreso un ID, realizar la busqueda por ID
 			 busquedaController.llenarTablaReservasId(id);  
 			 busquedaController.llenarTablaHuespedesId(id); 
 		}catch (NumberFormatException ex) {
+			//Si se ingresa un apellido, manejar la excepcion y buscar por apellido 
 			busquedaController.llenarTablaHuespedesApellido(id);
 			busquedaController.llenarTablaReservasPorApellido(id);
 		}
@@ -277,20 +306,30 @@ public class Busqueda extends JFrame {
 		lblBuscar.setForeground(Color.WHITE);
 		lblBuscar.setFont(new Font("Roboto", Font.PLAIN, 18));
 		
+		/**
+		 * JPanel evento al hacer click en el boton editar 
+		 * Obtiene el indice de la fila seleccionada de la tabla 
+		 */
+		
 		JPanel btnEditar = new JPanel();
 		btnEditar.setBorder(new EmptyBorder(0, 0, 0, 0));
 		btnEditar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				//Obtner el indice de la fila seleccionada 
 				int filaReservas = tbReservas.getSelectedRow();
 				int filaHuespedes = tbHuespedes.getSelectedRow();
 				
+				
+				// codigo si se selecciona  una fila de la tabla Reservas
 				if(filaReservas >= 0) {
 					busquedaController.ActualizarReservas();
 					busquedaController.limpiarTabla();
 					busquedaController.llenarTablaReservas();
 					busquedaController.llenarTablaHuespedes();
 				}
+				
+				// codigo si se selecciona una fila de la tabla Huespedes
 				else if (filaHuespedes >= 0) {
 					busquedaController.ActualizarHuespedes();
 					busquedaController.limpiarTabla();
@@ -313,44 +352,57 @@ public class Busqueda extends JFrame {
 		lblEditar.setBounds(0, 0, 135, 35);
 		btnEditar.add(lblEditar);
 		
+		
+		/**
+		 * JPanel evento al hacer click elimina el registro seleccionado
+		 * de la tabla correspondiente 
+		 */
+		
 		JPanel btnEliminar = new JPanel();
 		btnEliminar.setBorder(new EmptyBorder(0, 0, 0, 0));
 		btnEliminar.addMouseListener(new MouseAdapter(){
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				// Obtiene el indice de la fila seleccionada 
 				int filaReservas = tbReservas.getSelectedRow();
 				int filaHuespedes = tbHuespedes.getSelectedRow();
 				
+				//Si se selecciono una fila de la tabla reservas   
 				if(filaReservas >= 0) {
 					reservas = tbReservas.getValueAt(filaReservas, 0).toString();
 					int confirmar = JOptionPane.showConfirmDialog(null, "¿Estas seguro de que quieres eliminar los datos?");
 					
 					if(confirmar == JOptionPane.YES_OPTION) {
+						//extrae el valor de la primera columna de la fila seleccionada en la tabla y lo almacena como una cadena en la variable
 						String valor = tbReservas.getValueAt(filaReservas, 0).toString();
-						//String valorHuesped = tbHuespedes.getValueAt(filaHuespedes, 0).toString();
-						reservasController.Eliminar(Integer.valueOf(valor));
-						//huespedesController.Eliminar(Integer.valueOf(valorHuesped));
+						reservasController.Eliminar(Integer.valueOf(valor));  // se elimina la reserva
 						JOptionPane.showMessageDialog(contentPane, "Registro Eliminado");
+						 // limpiar y llenar
 						busquedaController.limpiarTabla();
 						busquedaController.llenarTablaReservas();
 						busquedaController.llenarTablaHuespedes();
 					}
 				}
+				
+				//Si se selecciona una fila de la tabla Huespedes
 				else if (filaHuespedes >= 0) {
 					huespedes = tbHuespedes.getValueAt(filaHuespedes, 0).toString();
 					int confirmarhuesped = JOptionPane.showConfirmDialog(null, "¿Estas seguro de que quieres eliminar los datos?");
 					
 					if(confirmarhuesped == JOptionPane.YES_OPTION) {
+						
+						//extrae el valor de la primera columna de la fila seleccionada en la tabla  y lo almacena como una cadena en la variable
 						String valorHuesped = tbHuespedes.getValueAt(filaHuespedes, 0).toString();
-						//String valor = tbReservas.getValueAt(filaReservas, 0).toString();
-						huespedesController.Eliminar(Integer.valueOf(valorHuesped));
-						//reservasController.Eliminar(Integer.valueOf(valor));
+						huespedesController.Eliminar(Integer.valueOf(valorHuesped));   //  se elimina el huesped
 						JOptionPane.showMessageDialog(contentPane, "Registro eliminado");
-						busquedaController.limpiarTabla();
+						 // limpiar y llenar
+						busquedaController.limpiarTabla();               
 						busquedaController.llenarTablaHuespedes();
 						busquedaController.llenarTablaReservas();
 					}
 				}
+				
+				//Si ocurre algo distinto a los otros 2 bloques 
 				else {
 					JOptionPane.showMessageDialog(null, "Ups, Ocurrio un error fila no seleccionada, porfavor seleccione una fila para eliminarla");
 				}
