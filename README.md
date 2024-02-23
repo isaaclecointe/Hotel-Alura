@@ -37,7 +37,7 @@
 1 -. </br>
 
 <p align="center" >
-     <img width="600" heigth="600" src="https://user-images.githubusercontent.com/101413385/169404781-7df6355b-3a15-472a-8d8e-fdb84d91a7bd.png">
+     <img width="600" heigth="600" src="[https://user-images.githubusercontent.com/101413385/169404781-7df6355b-3a15-472a-8d8e-fdb84d91a7bd.png](https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/b331dd60-bfd4-43f8-aa4b-ee30c500d570">
 </p>
 
 2 - .
