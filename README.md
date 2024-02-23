@@ -43,18 +43,18 @@
 2 - .
 
 <p align="center" >
-     <img width="600" heigth="600" src="https://user-images.githubusercontent.com/101413385/173256272-6dd3eaba-b52e-42ec-b307-17ed785f9110.png">
+     <img width="600" heigth="600" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/83a362b0-78fb-4c34-ba54-eeef59eef2e5">
 </p>
 
 3 - 
 
 <p align="center" >
-     <img width="600" heigth="600" src="https://user-images.githubusercontent.com/101413385/173166461-e62d9704-98d5-4773-a60e-57d5729575ae.png">
+     <img width="600" heigth="600" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/71d5cc38-364d-485d-a782-a5cd178cfa63">
 </p></br>
 
 
 <p align="center" >
-     <img width="600" heigth="600" src="https://user-images.githubusercontent.com/101413385/173256523-79d38ee2-8668-435c-b31a-ac6ba78bb813.png">
+     <img width="600" heigth="600" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/4670aa7e-d366-479f-bb55-e68d5d1f6825">
 </p>
 
 2 -
@@ -62,12 +62,12 @@
 1 - 
 
 <p align="center" >
-     <img width="400" heigth="400" src="https://user-images.githubusercontent.com/101413385/173164237-1db32d79-2b35-433f-817c-ec3fa30899fc.png">
+     <img width="400" heigth="400" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/80e5126f-e89e-4015-ba45-3ac84632d3df">
 </p>
 
 
 <p align="center" >
-     <img width="600" heigth="600" src="https://user-images.githubusercontent.com/101413385/173110215-f9451a5e-a9eb-4056-aec8-6eb3e3601e53.png">
+     <img width="600" heigth="600" src="https://github.com/isaaclec">
 </p>
 
 2 - 
