@@ -67,43 +67,43 @@
 
 
 <p align="center" >
-     <img width="600" heigth="600" src="https://github.com/isaaclec">
+     <img width="600" heigth="600" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/da9b3d74-7fcb-4973-b829-43d7c56b16ab">
 </p>
 
 2 - 
 
 <p align="center" >
-     <img width="400" heigth="400" src="https://user-images.githubusercontent.com/101413385/173111357-2ec928ac-5a3d-4f7c-ba84-8906d84bfd08.png">
+     <img width="400" heigth="400" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/7246da92-86ea-49b8-adef-b30b3521750f">
 </p>
 
 <p align="center" >
-     <img width="400" heigth="400" src="https://user-images.githubusercontent.com/101413385/169431325-23a2e3cb-85a3-4298-8e60-64dfa58e2e6f.png">
+     <img width="400" heigth="400" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/2f60ee6a-d0a2-4509-9346-9980bdde8fac">
 </p>
 
 <p align="center" >
-     <img width="600" heigth="600" src="https://user-images.githubusercontent.com/101413385/169431890-27f40955-27d8-4b4d-82df-d3507f85de6c.png">
+     <img width="600" heigth="600" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/dcbc942b-03ed-4107-b9c0-bf73cf11cbbf">
 </p>
 
 
 <p align="center" >
-     <img width="600" heigth="600" src="https://user-images.githubusercontent.com/101413385/169432246-a769555c-daf9-490e-a0c7-908f7e5de967.png">
+     <img width="600" heigth="600" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/99802972-d7b4-43fa-9e83-2dba77717ef4">
 </p>
 
 ## 📅 JCalendar
 
 
 <p align="center" >
-     <img width="600" heigth="600" src="https://user-images.githubusercontent.com/101413385/169592420-7ea798d4-b7d2-4fd6-a03c-75f0fbc2e4bc.png">
+     <img width="600" heigth="600" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/e1a4e53e-ddc2-403e-b4c6-1b35b8e91204">
 </p>
 
 
 <p align="center" >
-     <img width="500" heigth="500" src="https://user-images.githubusercontent.com/101413385/173167366-664a8876-a5c9-45d1-880d-650fbd6f8b07.png">     
+     <img width="500" heigth="500" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/eec3fcfe-cedd-4195-98fc-4e4853ef588a">     
 </p>
 
 
 <p align="center" >
-     <img width="500" heigth="500" src="https://user-images.githubusercontent.com/101413385/173699122-00cc4055-2098-4bba-8d3b-3bd252013116.png">
+     <img width="500" heigth="500" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/c8b0d8da-6f01-4162-828d-01e41b5eb257">
 </p>
 
 
