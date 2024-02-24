@@ -34,10 +34,10 @@
 
 
 
-1 -. </br>
+1 -Para la interfaz grafica usamos el plugin Window Builder y al correr el programa esta sera la primera ventana que veras  </br>
 
 <p align="center" >
-     <img width="600" heigth="600" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/b331dd60-bfd4-43f8-aa4b-ee30c500d570">
+     <img width="800" heigth="800" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/b331dd60-bfd4-43f8-aa4b-ee30c500d570">
 </p>
 
 2 - .
