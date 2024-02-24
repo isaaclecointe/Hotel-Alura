@@ -119,7 +119,7 @@
      <img width="800" heigth="800" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/dcbc942b-03ed-4107-b9c0-bf73cf11cbbf">
 </p>
 
-## 1.9 - Editar y Actualizar. Cuando se hace la edicion y se da click en el boton de editar lanza este mensaje de resgistro actualizado correctamente y tambien si algo salio mal. </br>
+## 1.9 - Editar y Actualizar. Cuando se hace la edicion y se da click en el boton de editar lanza este mensaje de registro actualizado correctamente y tambien si algo salio mal. </br>
 
 <p align="center" >
      <img width="800" heigth="800" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/e1a4e53e-ddc2-403e-b4c6-1b35b8e91204">
@@ -138,36 +138,7 @@
 </p>
 
 
-<p align="center" >
-     <img width="500" heigth="500" src="https://user-images.githubusercontent.com/101413385/173167991-44b111ca-c2d6-4d83-b225-33eb2657448f.png">
-</p>
-
-
-<p align="center" >
-     <img width="600" heigth="600" src="https://user-images.githubusercontent.com/101413385/173167817-ddbdedc5-c4a6-4f6d-bd86-f86a153d6b88.png">
-</p>
-
-
-<p align="center" >
-     <img width="600" heigth="600" src="https://user-images.githubusercontent.com/101413385/169596029-a9fa21ef-8d90-45a6-8aa2-be2d911d4074.png">
-</p>
-
-<p align="center" >
-     <img width="600" heigth="600" src="https://user-images.githubusercontent.com/101413385/173695620-7a4893e9-b9a1-44d6-8b70-c94a85ea891e.png">
-</p>
-
-
-<p align="center" >
-     <img width="700" heigth="700" src="https://user-images.githubusercontent.com/91544872/189419249-06b539da-7cf2-4d40-a711-618a5c872096.png">
-</p>
-
-
-<p align="center" >
-     <img width="600" heigth="600" src="https://user-images.githubusercontent.com/91544872/189419556-20b67f67-003c-47ac-a0ae-02cf814a6ccb.png">
-</p>
-
-
-## 📊 Base de Dados
+## 📊 Base de Datos
 
 
 ## 🗔 Plugin WindowBuilder
