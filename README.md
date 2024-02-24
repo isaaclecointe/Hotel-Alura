@@ -15,6 +15,7 @@
 - Eclipse
 - Biblioteca JCalendar
 - PostgreSQL
+- Imagenes generadas por IA
 - Plugin WindowBuilder </br>
 
 ---
@@ -34,35 +35,59 @@
 
 
 
-1 -Para la interfaz grafica usamos el plugin Window Builder y al correr el programa esta sera la primera ventana que veras  </br>
+## 1 -Para la interfaz grafica usamos el plugin Window Builder y al correr el programa esta sera la primera ventana que veras.  </br>
+####    🔹Contiene una Imagen generada por IA.
+####    🔹Boton de Login que lleva a la ventana de Login.
+####    🔹Boton de Salir con confirmacion si desea salir del programa.
 
 <p align="center" >
      <img width="800" heigth="800" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/b331dd60-bfd4-43f8-aa4b-ee30c500d570">
 </p>
 
-2 - .
+## 1.1 - Ventana de Login para el usuario empleado del hotel. </br>
+####    🔹Contiene  un campo para ingresar el nombre del usuario.
+####    🔹Campo para ingresar la contraseña correspondiente.
+####    🔹Boton en la esquina superior izquierda que lleva de regreso a la primera ventana de recepcion.
+####    🔹Boton en la esquina superior derecha que cierra la aplicacion. 
+####    🔹Boton para entrar "iniciar sesion" que lleva a la siguiente ventana del Menu de Usuario.
+####    🔹Si la Contraseña o el usuario ingresado no son validos  lanzara un mensaje de error al usuario.
 
 <p align="center" >
-     <img width="600" heigth="600" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/83a362b0-78fb-4c34-ba54-eeef59eef2e5">
+     <img width="800" heigth="800" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/83a362b0-78fb-4c34-ba54-eeef59eef2e5">
 </p>
 
-3 - 
+## 1.2 - Ventana de Menu de Usuario aqui controle y administre el flujo de reservas del hotel. </br>
+####    🔹Contiene una barra con la fecha del dia de actual cuando ingrese, esto gracias a la libreria JCalendar.
+####    🔹Contiene unas Instrucciones de como gestionar el sistema de forma optima y de las opciones que este ofrece.
+####    🔹Un boton de registro de reservas que lleva a la ventana de reservas.
+####    🔹Un boton de busqueda que lleva a la ventana de busqueda de las reservas y Huespedes.
+####    🔹Un boton de cerrar sesion que nos lleva de regreso a la ventana de Login.
 
 <p align="center" >
-     <img width="600" heigth="600" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/71d5cc38-364d-485d-a782-a5cd178cfa63">
+     <img width="800" heigth="800" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/71d5cc38-364d-485d-a782-a5cd178cfa63">
 </p></br>
 
-
+ ## 1.3 - Ventana de registro de reservas </br>
+ ####    🔹Contiene el campo de fecha de entrada donde al dar click se abre un calendario desplegable donde se elije la fecha de inicio de la reserva.
+ ####    🔹Campo de la fecha de salida  tambien con calendario desplegable para elejir la fecha que desees que finalize la reserva.
+ ####    🔹Campo que muestra el valor de la reserva en funcion de la fecha de entrada  a la fecha de salida.
+ ####    🔹Forma de pago campo desplegable con multiples opciones de pago: Tarjeta de Credito, Debito o efectivo.
+ ####    🔹Boton "siguiente" que genera el id de la reserva y lanza un mensaje con el numero de id generado y que lleva a la siguiente ventana de registro de huesped.
+ 
 <p align="center" >
-     <img width="600" heigth="600" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/4670aa7e-d366-479f-bb55-e68d5d1f6825">
+     <img width="800" heigth="800" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/4670aa7e-d366-479f-bb55-e68d5d1f6825">
 </p>
 
-2 -
-
-1 - 
+## 1.4 - Ventana de Registro Huesped. </br>
+####    🔹Contiene campos para Nombre y Apellido.
+####    🔹Campo para fecha de nacimiento con calendario desplegable para elijir el mes, año y dia.
+####    🔹Campo desplegable para la nacionalidad con opcion de multitud de paises.
+####    🔹Campo del numero de telefono del huesped.
+####    🔹Campo que contiene el id unico generado de la reserva.
+####    🔹Boton de guardar la reserva realizada.
 
 <p align="center" >
-     <img width="400" heigth="400" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/80e5126f-e89e-4015-ba45-3ac84632d3df">
+     <img width="800" heigth="800" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/80e5126f-e89e-4015-ba45-3ac84632d3df">
 </p>
 
 
