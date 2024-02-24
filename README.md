@@ -90,23 +90,33 @@
      <img width="800" heigth="800" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/80e5126f-e89e-4015-ba45-3ac84632d3df">
 </p>
 
+## 1.5 - Ventana emergente de Datos guardados satisfactoriamente con opcion de cancelar la reserva. </br>
 
 <p align="center" >
-     <img width="600" heigth="600" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/da9b3d74-7fcb-4973-b829-43d7c56b16ab">
+     <img width="800" heigth="800" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/da9b3d74-7fcb-4973-b829-43d7c56b16ab">
 </p>
 
-2 - 
+## 1.6 - Ventana de Busqueda y gestion de la reservas. </br>
+####    🔹Contiene dos modelos de tablas, Reservas y Huespedes con solo un click en la pestaña de cada tabla puedes cambiar a la tabla que desees.
+####    🔹Contiene un campo de busqueda y un boton que tiene como imagen una lupa para realizar la busqueda deseada.
+####    🔹Contiene un boton de editar, para editar se da doble click en el campo que desea realizar el cambio y despues de hacer el cambio da click en el boton editar lanzara un mensaje si fue exitoso y tambien si ocurrio algun tipo de error.
+####    🔹Contiene un boton de eliminar, para eliminar solo selecciona el registro o huesped que desea y da click en eliminar pedira una confimacion y tambien puede cancelar.
+####    🔹En esta imagen se hace una busqueda de todos los registros sin ingresar nada en el campo de texto. Cuando no se ingresa nada en el campo de texto y se da click en la lupa  automaticamente traera todas las reservas y huespedes.
 
 <p align="center" >
-     <img width="400" heigth="400" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/7246da92-86ea-49b8-adef-b30b3521750f">
+     <img width="800" heigth="800" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/7246da92-86ea-49b8-adef-b30b3521750f">
 </p>
 
-<p align="center" >
-     <img width="400" heigth="400" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/2f60ee6a-d0a2-4509-9346-9980bdde8fac">
-</p>
+## 1.7 - Busqueda por ID. Cuando ingresa el id de la reserva traera esa reserva unicamente tanto a la tabla reservas como  el huesped correspondiente a la tabla huespedes. </br>
 
 <p align="center" >
-     <img width="600" heigth="600" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/dcbc942b-03ed-4107-b9c0-bf73cf11cbbf">
+     <img width="800" heigth="800" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/2f60ee6a-d0a2-4509-9346-9980bdde8fac">
+</p>
+
+## 1.8 - Busqueda por apellido. Cuando se busca por el apellido del huesped traera unicamente a ese huesped a la tabla y su reserva correspondiente en la tabla Reservas. </br>
+
+<p align="center" >
+     <img width="800" heigth="800" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/dcbc942b-03ed-4107-b9c0-bf73cf11cbbf">
 </p>
 
 
