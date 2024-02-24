@@ -119,26 +119,22 @@
      <img width="800" heigth="800" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/dcbc942b-03ed-4107-b9c0-bf73cf11cbbf">
 </p>
 
+## 1.9 - Editar y Actualizar. Cuando se hace la edicion y se da click en el boton de editar lanza este mensaje de resgistro actualizado correctamente y tambien si algo salio mal. </br>
 
 <p align="center" >
-     <img width="600" heigth="600" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/99802972-d7b4-43fa-9e83-2dba77717ef4">
+     <img width="800" heigth="800" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/e1a4e53e-ddc2-403e-b4c6-1b35b8e91204">
 </p>
 
-## 📅 JCalendar
-
+## 2 - Eliminar registro. Al eliminar el registro seleccionado lanzara un mensaje pidiendo una confirmacion. </br>
 
 <p align="center" >
-     <img width="600" heigth="600" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/e1a4e53e-ddc2-403e-b4c6-1b35b8e91204">
+     <img width="800" heigth="800" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/eec3fcfe-cedd-4195-98fc-4e4853ef588a">     
 </p>
 
+## 2.1 - Eliminar registro. Despues de la confirmacion el registro sera eliminado. </br>
 
 <p align="center" >
-     <img width="500" heigth="500" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/eec3fcfe-cedd-4195-98fc-4e4853ef588a">     
-</p>
-
-
-<p align="center" >
-     <img width="500" heigth="500" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/c8b0d8da-6f01-4162-828d-01e41b5eb257">
+     <img width="800" heigth="800" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/c8b0d8da-6f01-4162-828d-01e41b5eb257">
 </p>
 
 
