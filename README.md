@@ -140,14 +140,11 @@
 
 ## 📊 Base de Datos
 
-##2.2 - Diagrama de la Base de Datos relacional en PostgreSQL. 
+## 2.2 - Diagrama de la Base de Datos relacional en PostgreSQL. </br>
 
 <p align="center" >
      <img width="800" heigth="800" src="https://github.com/isaaclecointe/Hotel-Alura/assets/121967392/c102b7a2-e95a-4b89-a94f-da4dda33c137">
-</p>
-
-
-## 🗔 Plugin WindowBuilder
+</p> </br>
 
 
 🧡 <strong>Oracle</strong></br>
