@@ -2,7 +2,15 @@ package jdbc.modelo;
 
 import java.sql.Date;
 
+/**
+ * Clase que representa el modelo de un huesped en el sistema del hotel.
+ * Contiene informacion personal y de reservas del huesped.
+ */
+
 public class Huespedes {
+	
+	//Campos privados que representan las propiedades de un huesped.
+	
     private Integer Id;
     private String Nombre;
     private String Apellido;
@@ -10,6 +18,9 @@ public class Huespedes {
     private String Nacionalidad;
     private String Telefono;
     private Integer IdReserva;
+    
+    
+    // Constructor para crear un objeto Huespedes sin ID.
     
     public Huespedes( String nombre,String apellido,Date fechaNacimiento,String nacionalidad,String telefono,Integer idReserva) {
     	super();
@@ -20,6 +31,8 @@ public class Huespedes {
     	Telefono = telefono;
     	IdReserva = idReserva;
     }
+    
+    //Constructor para crear un objeto huespedes con ID
     public Huespedes(Integer id, String nombre,String apellido,Date fechaNacimiento,String nacionalidad,String telefono,Integer idReserva) {
     	super();
     	Id = id ;
@@ -30,6 +43,8 @@ public class Huespedes {
     	Telefono = telefono;
     	IdReserva = idReserva;
     }
+    
+    //Metodos getters y setter para acceder y modificar las propiedades del huesped.
 	public Integer getId() {
 		return Id;
 	}

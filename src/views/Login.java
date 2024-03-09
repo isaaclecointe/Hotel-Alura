@@ -25,7 +25,8 @@ import java.awt.FlowLayout;
 public class Login extends JFrame {
 
 	/**
-	 * 
+	  * Clase Login, proporciona una interfaz gráfica para el inicio de sesión del usuario.
+      * Incluye campos de texto para el usuario y la contraseña, y botones para acciones como realizar el login o salir de la aplicacion.
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -36,7 +37,7 @@ public class Login extends JFrame {
 	private JLabel lblAtras;
 
 	/**
-	 * Launch the application.
+	 * Iniciar la aplicacion.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -52,8 +53,9 @@ public class Login extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
-	 */
+     * Constructor que inicializa la ventana de inicio de sesión.
+     * Configura el tamaño, el diseño y los componentes interactivos de la ventana.
+     */
 	public Login() {
 		setResizable(false);
 		setUndecorated(true);
@@ -114,14 +116,18 @@ public class Login extends JFrame {
 		labelExit.setFont(new Font("Roboto", Font.PLAIN, 18));
 		labelExit.setHorizontalAlignment(SwingConstants.CENTER);		
 		
+		// Campo de texto para el nombre de usuario y comportamiento del placeholder
 		txtUsuario = new JTextField();
 		txtUsuario.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
+				
+				// Al hacer clic en el campo, si el texto es el placeholder, se limpia el campo y se cambia el color del texto.
 				 if (txtUsuario.getText().equals("Ingrese su nombre de usuario")) {
 					 txtUsuario.setText("");
 					 txtUsuario.setForeground(Color.black);
 			        }
+				// Si el campo de contraseña está vacío, se rellena con el placeholder.
 			        if (String.valueOf(txtContrasena.getPassword()).isEmpty()) {
 			        	txtContrasena.setText("********");
 			        	txtContrasena.setForeground(Color.gray);
@@ -152,15 +158,19 @@ public class Login extends JFrame {
 		separator_1.setBounds(65, 393, 324, 2);
 		panel.add(separator_1);
 		
+		// Configuración de JPasswordField para la contraseña con placeholder
 		txtContrasena = new JPasswordField();
 		txtContrasena.setText("********");
 		txtContrasena.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
+				
+				// Al hacer clic en el campo, si el texto es el placeholder, se limpia el campo y se cambia el color del texto.
 				if (String.valueOf(txtContrasena.getPassword()).equals("********")) {
 					txtContrasena.setText("");
 					txtContrasena.setForeground(Color.black);
 		        }
+				  // Si el campo de usuario está vacío, se rellena con el placeholder
 		        if (txtUsuario.getText().isEmpty()) {
 		        	txtUsuario.setText("Ingrese su nombre de usuario");
 		        	txtUsuario.setText("");
@@ -186,6 +196,7 @@ public class Login extends JFrame {
 		lblContrasea.setBounds(65, 316, 140, 26);
 		panel.add(lblContrasea);
 		
+		//Boton Login contiene eventos para cambiar de color y para llamar al metodo Login cuando se hace click
 		JPanel btnLogin = new JPanel();
 		btnLogin.addMouseListener(new MouseAdapter() {
 			@Override
@@ -250,10 +261,8 @@ public class Login extends JFrame {
 		btnRegresar.add(lblAtras);
 		lblAtras.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAtras.setForeground(new Color(0, 0, 0));
-		//lblAtras.addMouseListener(new MouseAdapter() {
-		
-		
-	//	});
+
+		//Boton para Regresar a la ventana anterior
 		lblAtras.setFont(new Font("Dialog", Font.PLAIN, 20));
 		btnRegresar.addMouseListener(new MouseAdapter() {
 			@Override
@@ -277,17 +286,20 @@ public class Login extends JFrame {
 		});
 	}
 	
+	// Metodo de login compara si los datos ingresados por el usuarios son validos. 
 	private void Login() {
 		 String usuario = txtUsuario.getText();
 	     String contrasena = new String(txtContrasena.getPassword());
 
 	    LoginController loginController = new LoginController();  
 
+	    //Muestra la ventana Menu usuario si las credenciales son validas a traves de LoginController.
 	        if(loginController.login(usuario, contrasena)){
 	            MenuUsuario menu = new MenuUsuario();
 	            menu.setVisible(true);
 	            dispose();	 
 	        }else {
+	        	//si las credenciales no son validas.
 	            JOptionPane.showMessageDialog(this, "Usuario o Contraseña no válidos");
 	        }
 	} 

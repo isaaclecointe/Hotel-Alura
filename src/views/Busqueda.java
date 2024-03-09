@@ -31,6 +31,12 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 
 
+
+/**
+ * Clase Busqueda que extiende de JFrame, proporcionando una interfaz gráfica para la búsqueda de reservas y huéspedes.
+ * Incluye campos de texto, tablas y componentes para la interaccion con la información del hotel.
+ */
+
 @SuppressWarnings("serial")
 public class Busqueda extends JFrame {
 
@@ -185,9 +191,9 @@ public class Busqueda extends JFrame {
 				labelAtras.setForeground(Color.white);
 			}		
 			
-			/**
-			 * Evento al salir del botón: Restaura los colores originales.
-			 */
+			
+			 // Evento al salir del botón: Restaura los colores originales.
+			 
 
 			@Override
 			public void mouseExited(MouseEvent e) {
@@ -224,16 +230,18 @@ public class Busqueda extends JFrame {
 				usuario.setVisible(true);
 				dispose();
 			}
+			
+			//Al usuario pasar el cursor por el botón este cambiará de color
 			@Override
-			public void mouseEntered(MouseEvent e) { //Al usuario pasar el cursor por el botón este cambiará de color
+			public void mouseEntered(MouseEvent e) { 
 				btnexit.setBackground(Color.red);
 				labelExit.setForeground(Color.white);
 			}			
 
 			
-			/**
-			 * Evento al salir del botón: Restaura los colores originales.
-			 */
+			
+			//  Evento al salir del botón: Restaura los colores originales.
+			 
 			
 			@Override
 			public void mouseExited(MouseEvent e) { 

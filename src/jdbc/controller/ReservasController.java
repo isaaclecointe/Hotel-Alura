@@ -24,7 +24,7 @@ public class ReservasController {
 	/**
 	 * Metodos para Guardar, Listar todas las Reservas,
 	 * Buscar por ID, buscar por Apellido, Actualizar y Eliminar.
-	 * A través de la clase HuespedesDAO.
+	 * A través de la clase ReservasDAO.
 	 */
 	
 	public void guardar(Reservas reservas) {

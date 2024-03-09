@@ -16,13 +16,18 @@ import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 import java.awt.Toolkit;
 
+ /**
+  * Clase que muestra una ventana cuando los datos tanto de Reservas como de Huesped fueron insertados
+  * en la bas de datos correctamente 
+  */
+
 @SuppressWarnings("serial")
 public class Exito extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 
 	/**
-	 * Launch the application.
+	 * Metodo principal que inicia la aplicacion
 	 */
 	public static void main(String[] args) {
 		try {
@@ -35,7 +40,7 @@ public class Exito extends JDialog {
 	}
 
 	/**
-	 * Create the dialog.
+	 * Crea el dialogo.
 	 */
 	public Exito() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Exito.class.getResource("/imagenes/aH-40px.png")));
