@@ -13,10 +13,18 @@ import jdbc.modelo.Huespedes;
 public class HuespedesController {
 	private HuespedesDAO huespedesDAO;
 	
+	
+	// Constructor que establece la conexion con la base de datos  y inicializa HuespedesDAO
 	public HuespedesController() {
 		   Connection connection = new ConnectionFactory().recuperaConexion();
 		   this.huespedesDAO = new  HuespedesDAO(connection);
 	}
+	
+	/**
+	 * Metodos para Guardar, Listar todos los Huespedes,
+	 * Buscar por ID, buscar por Apellido, Actualizar y Eliminar.
+	 * A través de la clase HuespedesDAO.
+	 */
 	
 	public void guardar (Huespedes huesped) {
 		this.huespedesDAO.guardarHuesped(huesped);
@@ -41,8 +49,4 @@ public class HuespedesController {
 	public List<Huespedes> buscarPorApellido(String apellido){
 		return this.huespedesDAO.buscarApellido(apellido);
 	}
-	
-	//public List<Huespedes> listar
-	
-
 }

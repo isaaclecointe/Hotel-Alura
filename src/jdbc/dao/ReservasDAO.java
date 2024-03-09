@@ -13,6 +13,13 @@ import java.util.List;
 
 import jdbc.modelo.Reservas;
 
+
+    /**
+     * DAO clase para manejar las operaciones de la base de datos relacionadas con las reservas del hotel.
+     * permite insertar, buscar, actualizar y eliminar reservas en la base de datos.
+     * 
+     */
+
 public class ReservasDAO {
 
 	private Connection connection;
@@ -21,6 +28,11 @@ public class ReservasDAO {
 		this.connection = connection;
 	}
 	
+	
+	/**
+	 * Metodo para insertar una nueva Reserva en la base de datos
+	 * Retorna el ID auto generado y lo asigna a la reserva.
+	 */
 	public void guardarReserva(Reservas reserva)  {
 		
 		try {
@@ -45,6 +57,7 @@ public class ReservasDAO {
 		}
 	}
 	
+	// Metodo que busca todas las Reservas que existan en la base de datos y las devuelve en una lista.
 	public List<Reservas> buscarReservas(){
 		List<Reservas> reservas = new ArrayList<>();
 		String sql = "SELECT id, fechaentrada, fechasalida, valor, formaPago FROM alurahotel.reservas ORDER BY id";
@@ -66,6 +79,8 @@ public class ReservasDAO {
 		return reservas;
 	}
 	
+	
+	//Metodo que busca las reservas Por su ID y devuelve una lista que contiene la reserva encontrada.
 	public List<Reservas> buscarReservaPorId(String id) {
 	     List<Reservas> reservas = new ArrayList<Reservas>();
 	     try {
@@ -84,6 +99,7 @@ public class ReservasDAO {
 	     }
 	}
 	
+	//Metodo que busca por el Apellido 
 	public List<Reservas> buscarReservaPorApellido(String apellido){
 		List<Reservas> reservas = new ArrayList<Reservas>();
 		try {
@@ -102,7 +118,7 @@ public class ReservasDAO {
 		}
 	}
 	
-	
+	//Metodo que elimina la Reserva  de la base de datos por su ID.
 	public void Eliminar(Integer id) {
 		try(PreparedStatement pst = connection.prepareStatement("DELETE FROM alurahotel.reservas WHERE id = ?")){
 			pst.setInt(1, id);
@@ -112,6 +128,14 @@ public class ReservasDAO {
 		}
 	}
 	
+	/**
+	 * Metodo para actualizar la reserva
+	 * @param fechaentrada La nueva fecha de entrada
+	 * @param fechasalida La nueva fecha de salida 
+	 * @param valor El nuevo valor de la reserva 
+	 * @param formapago La nueva forma de pago
+	 * @param id El id de la reserva a acttualizar 
+	 */
 	public void Actualizar(Date fechaentrada, Date fechasalida, String valor, String formapago, Integer id ) {
 		try(PreparedStatement pst = connection.prepareStatement("UPDATE alurahotel.reservas SET fechaentrada = ?, fechasalida = ?, valor = ?, formapago = ? WHERE id = ? ")){
 			pst.setDate(1, fechaentrada);
@@ -124,7 +148,15 @@ public class ReservasDAO {
 			throw new RuntimeException(e);
 		}
 	}
-
+   
+	
+	/**
+	 *  Método privado para convertir un ResultSet en una lista de objetos Reservas.
+	 * @param reservas La lista donde se almacenaran las reservas
+	 * @param pstm El PreparedStatement que contiene el ResultSet a transformar.
+	 * @throws SQLException Si ocurre un error al acceder al ResultSet.
+	 */
+	
 	private void transformarResultSetEnReserva(List<Reservas> reservas, PreparedStatement pstm) throws SQLException {
 		try(ResultSet rst = pstm.getResultSet()){
 			while(rst.next()) {

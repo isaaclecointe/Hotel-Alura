@@ -19,6 +19,11 @@ public class HuespedesDAO {
 		this.connection = connection;
 	}
 	
+	
+	/**
+	 * Metodo para insertar un nuevo huesped en la base de datos
+	 * Retorna los ID auto generados 
+	 */
 	public void guardarHuesped(Huespedes huesped) {
 		try {
 			String sql = "INSERT INTO alurahotel.huespedes (nombre, apellido, fechanacimiento, nacionalidad, telefono, idreserva)VALUES(?,?,?,?,?,?)";
@@ -44,6 +49,7 @@ public class HuespedesDAO {
 		}
 	}
 	
+	//Metodo que Lista todos los huespedes registrados en la tabla huespedes de la base de datos 
 	public List<Huespedes> listarHuespedes(){
 		List<Huespedes> huespedes = new ArrayList<Huespedes>();
 		try {
@@ -60,6 +66,12 @@ public class HuespedesDAO {
 		}
 	}
 	
+	
+	/**
+	 * Metodo que busca los Huespedes por ID
+	 * Convierte el ID de String a int y utiliza PreparedStatement para realizar la consulta SQL.
+	 * Transforma el ResultSet obtenido en una lista de objetos Huespedes.
+	 */
 	public List<Huespedes> buscarId(String id){
 		List<Huespedes> huespedes = new ArrayList<Huespedes>();
 		try {
@@ -78,6 +90,11 @@ public class HuespedesDAO {
 		}
 	}
 	
+	
+	/**
+	 * Metodo que busca los Huespedes por Apellido
+	 * Utiliza PreparedStatement para realizar la consulta SQL y transforma el ResultSet en una lista de objetos Huespedes.
+	 */
 	public List<Huespedes> buscarApellido(String apellido){
 		List<Huespedes> huespedes = new ArrayList<Huespedes>();
 		try {
@@ -95,6 +112,12 @@ public class HuespedesDAO {
 		}
 	}
 	
+	
+	/**
+	 * Metodo para editar y Actualizar los Huespedes 
+	 * Recibe los nuevos valores para los campos del huesped y el ID del registro a actualizar.
+	 * Utiliza PreparedStatement para ejecutar la actualizacion SQL.
+	 */
 	public void actualizarHuesped(String nombre,String apellido, Date fechanacimiento, String nacionalidad,String telefono,Integer idreserva, Integer id) {
 		try(PreparedStatement pstm =  connection.prepareStatement("UPDATE alurahotel.huespedes SET nombre = ?, apellido = ?, fechanacimiento = ?, nacionalidad = ?, telefono = ?, idreserva = ? WHERE id = ?")){
 			pstm.setString(1, nombre);
@@ -110,16 +133,18 @@ public class HuespedesDAO {
 		}
 	}
 	
+	//Metodo para eliminar Huespedes de la base de datos por su ID.
 	public void EliminarHuesped(Integer id) {
 		try(PreparedStatement pstm = connection.prepareStatement("DELETE FROM alurahotel.huespedes WHERE id = ?")){
 			pstm.setInt(1, id);
 			pstm.execute();
 		}catch(SQLException e) {
+			// Lanzamos una RuntimeException para evitar la necesidad de manejar o declarar SQLException.
 			throw new RuntimeException(e);
 		}
 	}
 	
-	
+	 // Método privado para convertir un ResultSet en una lista de objetos Huespedes.
 	private void transformarResultSetEnHuesped(List<Huespedes> reservas,PreparedStatement pstm) throws SQLException {
 		try(ResultSet rst = pstm.getResultSet()){
 			while(rst.next()) {

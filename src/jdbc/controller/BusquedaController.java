@@ -80,7 +80,7 @@ public class BusquedaController {
 		
 		DefaultTableModel modeloReservas = new DefaultTableModel();
 		
-		try {                                                 //Creamos un modelo solo para llenar la tabla con todas las reservas
+		try {                                                 //Modelo para llenar la tabla con todas las Reservas
 			
 	    	   modeloReservas.addColumn("Numero Reserva");
 	    	   modeloReservas.addColumn("Fecha entrada");
@@ -96,13 +96,15 @@ public class BusquedaController {
 			throw e;
 		}
 	}
-
+	
+	//Modelo para llenar la tabla ReservasID
+   
    public void llenarTablaReservasId(String txtBuscar) {
 	   
 	   List<Reservas> listaReservasId = BuscarReservasPorId(txtBuscar);
 	   
-	   if(listaReservasId.isEmpty()) {    //aqui hacemos lo mismo que en el metodo anterior solo que con un nombre de modelo diferente para evitar confusiones y hacemos una validacion para ver si el id 
-		   JOptionPane.showMessageDialog(null, "No existe ninguna reserva ni huesped con ese id");    // ingresado existe si no devolvemos un mensaje de error
+	   if(listaReservasId.isEmpty()) {    
+		   JOptionPane.showMessageDialog(null, "No existe ninguna reserva ni huesped con ese id");    // Mensaje si no existe la reserva con el ID ingresado 
 	   }else {                                                                                       
 	    
 	       try {
@@ -123,11 +125,13 @@ public class BusquedaController {
 	   }
    }
    
+   //Modelo para llenar la tabla por Apellido
+   
    public void llenarTablaReservasPorApellido(String txtBuscar) {
 		
 		List<Reservas> listaReservasPorApellido = BuscarReservasPorApellido(txtBuscar);
 		
-		try {                                                 //Creamos un modelo solo para llenar la tabla con todas las reservas
+		try {                                                
 			
 	        modeloReservasApellido = new DefaultTableModel();
 			
@@ -146,6 +150,12 @@ public class BusquedaController {
 		}
 	}
    
+/**
+ *  Modelo para llenar la tabla huespedes con todos los huespedes.
+ *  nuevos modelos para cada metodo para evitar la union de los 
+ *  resultados entre las tablas tbReservas y tbHuespedes.
+ *   
+ */ 
 
 public void llenarTablaHuespedes() {
 		
@@ -153,9 +163,8 @@ public void llenarTablaHuespedes() {
 		
 		DefaultTableModel modeloHuespedes = new DefaultTableModel();
 		
-		try {                                             // aqui el mismo proceso un nuevo modelo para traer todos los huespedes  a 
-           
-			                       //la tabla huespedes se crean nuevos modelo en cada metodo para evitar que se mezclen los resultados entre las tablas huespedes y reservas
+		try {                                             
+    
 			modeloHuespedes.addColumn("Número de Huesped");
 			modeloHuespedes.addColumn("Nombre");
 			modeloHuespedes.addColumn("Apellido");
@@ -173,11 +182,13 @@ public void llenarTablaHuespedes() {
 		}
 	}   
    
+     // Modelo para llenar la tabla Huespedes por ID
+
    public void llenarTablaHuespedesId(String txtBuscar) {
 		
 		List<Huespedes> listaHuespedesId = BuscarHuespedPorId(txtBuscar);
-		try {                                                            //mismo proceso al segundo metodo siempre cambiando el nombre del modelo
-			modeloHuespedesId = new DefaultTableModel();                   // para que no genere ningun conflicto
+		try {                                                            
+			modeloHuespedesId = new DefaultTableModel();                  
 			
 			modeloHuespedesId.addColumn("Número de Huesped");
 			modeloHuespedesId.addColumn("Nombre");
@@ -195,12 +206,13 @@ public void llenarTablaHuespedes() {
 		}
 	}   
 
+   //Modelo para llenar la tabla Huespedes por Apellido
 
    public void llenarTablaHuespedesApellido(String txtBuscar) {
 		
  		List<Huespedes> listaHuespedesPorApellido = BuscarHuespedesPorApellido(txtBuscar);
- 		try {                                                            //mismo proceso al segundo metodo siempre cambiando el nombre del modelo
- 			modeloHuespedesApellido = new DefaultTableModel();                   // para que no genere ningun conflicto
+ 		try {                                                           
+ 			modeloHuespedesApellido = new DefaultTableModel();                  
  			
  			modeloHuespedesApellido.addColumn("Número de Huesped");
  			modeloHuespedesApellido.addColumn("Nombre");
@@ -218,6 +230,7 @@ public void llenarTablaHuespedes() {
  		}
  	}  
    
+   //Metodo para Actualizar las Reservas 
    
    public void ActualizarReservas() {
 	   Optional.ofNullable(modelo.getValueAt(tbReservas.getSelectedRow(),tbReservas.convertColumnIndexToModel(tbReservas.getSelectedColumn())))
@@ -233,6 +246,8 @@ public void llenarTablaHuespedes() {
 	 },()->JOptionPane.showMessageDialog(null, "Debe elejir primero un registro porfavor"));
    }
    
+   //Metodo para Actualizar los Huespedes
+   
    public void ActualizarHuespedes() {
 	   Optional.ofNullable(modeloHuespedesId.getValueAt(tbHuespedes.getSelectedRow(), tbHuespedes.convertColumnIndexToModel(tbHuespedes.getSelectedColumn())))
 	   .or(() -> Optional.ofNullable(modeloHuesped.getValueAt(tbHuespedes.getSelectedRow(),tbHuespedes.convertColumnIndexToModel(tbHuespedes.getSelectedColumn()))))
@@ -245,17 +260,27 @@ public void llenarTablaHuespedes() {
 		   Integer idReserva = Integer.valueOf(modeloHuespedesId.getValueAt(tbHuespedes.getSelectedRow(), 6).toString());
 		   Integer id = Integer.valueOf(modeloHuespedesId.getValueAt(tbHuespedes.getSelectedRow(), 0).toString());
 		   
-		   if(tbHuespedes.getSelectedColumn() == 0 || tbHuespedes.getSelectedColumn() == 6) {
+		   
+		 /**
+		  * Condicion en caso de intento de editar los ID,
+		  * No se pueden modificar los ID
+		  */
+		   
+		   if(tbHuespedes.getSelectedColumn() == 0 || tbHuespedes.getSelectedColumn() == 6) {   
 			   JOptionPane.showMessageDialog(null, "No se pueden modificar los id");
 		   }else {
 		   this.huespedesController.actualizar(nombre, apellido, fechanacimiento, nacionalidad, telefono, idReserva, id);
-		   JOptionPane.showMessageDialog(null, String.format("Registro Actualizado correctamente"));
+		   JOptionPane.showMessageDialog(null, String.format("Registro Actualizado correctamente"));   //Mensaje de Operacion exitosa
 		   }
 		   
-	},() -> JOptionPane.showMessageDialog(null, "Debe elejir primero un registro porfavor")) ;
+	},() -> JOptionPane.showMessageDialog(null, "Debe elejir primero un registro porfavor")) ; //Mensaje su no se elijio un registro aun
 	   
    }
 
+   /**
+    * Correspondientes  Getters y Setters para HuespedesApellido y
+    * ReservasApellido 
+    */
 
 public DefaultTableModel getModeloHuespedesApellido() {
 	return modeloHuespedesApellido;

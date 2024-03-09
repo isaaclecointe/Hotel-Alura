@@ -15,10 +15,17 @@ public class ReservasController {
 
 	private ReservasDAO reservasDAO;
 	
+	// Constructor que establece la conexion con la base de datos  y inicializa ReservasDAO
 	public ReservasController() {
 		Connection connection = new ConnectionFactory().recuperaConexion();
 		this.reservasDAO = new ReservasDAO(connection);
 	}
+	
+	/**
+	 * Metodos para Guardar, Listar todas las Reservas,
+	 * Buscar por ID, buscar por Apellido, Actualizar y Eliminar.
+	 * A través de la clase HuespedesDAO.
+	 */
 	
 	public void guardar(Reservas reservas) {
 		this.reservasDAO.guardarReserva(reservas);
