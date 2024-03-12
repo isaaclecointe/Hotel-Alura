@@ -25,7 +25,11 @@ public class MenuPrincipal extends JFrame {
 	int xMouse, yMouse;
 
 	/**
-	 * Launch the application.
+	 * Clase que se encarga de ser la primera ventana de la aplicacion.
+	 * Posee el Boton de Login que redirije a la ventana de Login y la opcion de salir de la aplicacion.
+	 * 
+	 * 
+	 * Inicia la aplicacion.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

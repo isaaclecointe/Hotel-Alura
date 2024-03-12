@@ -11,6 +11,13 @@ import javax.swing.table.DefaultTableModel;
 import jdbc.modelo.Huespedes;
 import jdbc.modelo.Reservas;
 
+   /**
+    * Clase controladora para la busqueda gestion  de reservas y huespedes.
+    * Esta clase ofrece metodos para buscar reservas y huespedes por diferentes criterios
+    * como busqueda por ID, Apellido y busqueda sin ningun criterio asi como para actualizar y eliminar.
+    * 
+    */
+   
 public class BusquedaController {
 
 	private HuespedesController huespedesController;

@@ -7,6 +7,10 @@ import java.sql.SQLException;
 
 import jdbc.factory.ConnectionFactory;
 
+  /**
+   * Clase que se encarga del Login del Usuario para entrar al sistema.
+   */
+
 public class LoginController {
       
 	//Crea las conexiones para la base de datos 

@@ -10,6 +10,12 @@ import jdbc.dao.HuespedesDAO;
 import jdbc.factory.ConnectionFactory;
 import jdbc.modelo.Huespedes;
 
+    /**
+     * Clase controladora para la gestion de los huespedes en la base de datos.
+     * Esta clase proporciona metodos para operaciones CRUD (Crear, Leer, Actualizar, Eliminar) 
+     * sobre la entidad Huespedes y utiliza huespedes DAO para la interaccion con la base de datos.
+     */
+
 public class HuespedesController {
 	private HuespedesDAO huespedesDAO;
 	

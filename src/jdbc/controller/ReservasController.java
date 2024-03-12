@@ -9,7 +9,11 @@ import jdbc.dao.ReservasDAO;
 import jdbc.factory.ConnectionFactory;
 import jdbc.modelo.Reservas;
 
-
+	/**
+	 * Clase controladora para la gestion de las Reservas en la base de datos.
+	 * Esta clase proporciona metodos para operaciones CRUD (Crear, Leer, Actualizar, Eliminar) 
+	 * sobre la entidad Reservas y utiliza Reservas DAO para la interaccion con la base de datos.
+	 */
 
 public class ReservasController {
 

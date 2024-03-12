@@ -45,7 +45,8 @@ public class RegistroHuesped extends JFrame {
 	int xMouse, yMouse;
 
 	/**
-	 * Launch the application.
+	 * Clase que se encarga de ingresar el huesped y guardarlo en la base de datos.
+	 * Inicia la aplicacion.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -61,8 +62,10 @@ public class RegistroHuesped extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 *  Constructor de la ventana registro Huesped 
+	 *  @param idReserva identificador único de la reserva asociada al huésped.
 	 */
+	 
 	public RegistroHuesped(int idReserva) {
 		this.huespedesController = new HuespedesController();
 		new ReservasController();
@@ -99,6 +102,7 @@ public class RegistroHuesped extends JFrame {
 		header.setBounds(0, 0, 910, 36);
 		contentPane.add(header);
 		
+		//Boton para regresar a ventana Reservas 
 		JPanel btnAtras = new JPanel();
 		btnAtras.addMouseListener(new MouseAdapter() {
 			@Override
@@ -130,7 +134,7 @@ public class RegistroHuesped extends JFrame {
 		labelAtras.setBounds(0, 0, 53, 36);
 		btnAtras.add(labelAtras);
 		
-		
+		//Campos de texto para ingresar los datos requeridos del Huesped para ser insertados en la base de datos.
 		txtNombre = new JTextField();
 		txtNombre.setFont(new Font("Roboto", Font.PLAIN, 16));
 		txtNombre.setBounds(560, 135, 285, 33);
@@ -258,6 +262,7 @@ public class RegistroHuesped extends JFrame {
 		separator_1_2_5.setBackground(new Color(12, 138, 199));
 		contentPane.add(separator_1_2_5);
 		
+		//Boton para guardar la informacion del huesped en la base de datos.
 		JPanel btnguardar = new JPanel();
 		btnguardar.setBorder(new EmptyBorder(0, 0, 0, 0));
 		btnguardar.setBounds(723, 560, 164, 35);
@@ -296,6 +301,8 @@ public class RegistroHuesped extends JFrame {
 		panel.add(logo);
 		logo.setIcon(new ImageIcon(RegistroHuesped.class.getResource("/imagenes/Ha-100px.png")));
 		
+		
+		//Boton para salir de la aplicacion.
 		JPanel btnexit = new JPanel();
 		btnexit.setBounds(857, 0, 53, 36);
 		contentPane.add(btnexit);
@@ -334,16 +341,26 @@ public class RegistroHuesped extends JFrame {
 		contentPane.add(separator_1_2_5_1);
 	}
 	
+	/**
+	 * Guarda un nuevo huésped en la base de datos.
+     * Verifica que todos los campos requeridos estén completos antes de guardar.
+	 */
+	
 	private void guardarHuesped() {
 		if(txtFechaN.getDate() != null && !txtNombre.equals("") && !txtApellido.equals("") && !txtTelefono.equals("")) {
 			String fechaN = ((JTextField)txtFechaN.getDateEditor().getUiComponent()).getText();
+			 // Convierte el número de reserva de String a int.
 			int nreserva = Integer.parseInt(txtNreserva.getText());
+			// Se crea una instancia de Huespedes con los datos ingresados.
 			Huespedes huespedes = new Huespedes(txtNombre.getText(),txtApellido.getText(),java.sql.Date.valueOf(fechaN), txtNacionalidad.getSelectedItem().toString(),txtTelefono.getText(),nreserva);
+			//Guarda el huesped en la base de datos a traves del controlador.
 			this.huespedesController.guardar(huespedes);
+			//Muestra la ventan de exito y cierra la ventana actual. 
 			Exito exito = new Exito();
 			exito.setVisible(true);
 			dispose();
 		}else {
+			// Mensaje si hubo algun campo que no fue completado.
 			JOptionPane.showMessageDialog(this, "Tienes que completar todos los campos.");
 		}
 	}

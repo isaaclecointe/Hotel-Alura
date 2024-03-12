@@ -1,1 +1,3 @@
 *.class
+bin/jdbc/
+bin/views/

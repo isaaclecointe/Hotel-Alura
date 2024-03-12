@@ -28,7 +28,10 @@ public class MenuUsuario extends JFrame {
 	private JLabel labelRegistro;
 
 	/**
-	 * Launch the application.
+	 * Clase que se encarga de la ventana del Menu de usuario.
+	 * Presenta la opcion de dirigirse a la seccion de sistema de reservas o a la busqueda y gestion de reservas
+	 * y la opcion de cerrar la sesion de usuario.  
+	 * Inicia la aplicacion.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -84,8 +87,11 @@ public class MenuUsuario extends JFrame {
 		panelMenu.add(lblNewLabel_2);
 		lblNewLabel_2.setIcon(new ImageIcon(MenuUsuario.class.getResource("/imagenes/aH-150px.png")));
 		
+		//Boton de para entrar a el sistema de registro de reservas
 		JPanel btnRegistro = new JPanel();
 		btnRegistro.addMouseListener(new MouseAdapter() {
+			
+			//Metodos para que cambie de color el JPanel al pasar el cursor por esa area.
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				btnRegistro.setBackground(new Color(118, 187, 223));				
@@ -94,6 +100,8 @@ public class MenuUsuario extends JFrame {
 			public void mouseExited(MouseEvent e) {
 				btnRegistro.setBackground(new Color(12, 138, 199));	
 			}
+			
+			//Metodo para mostrar la ventana de reservas si se hace click
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				ReservasView reservas = new ReservasView();
@@ -114,6 +122,10 @@ public class MenuUsuario extends JFrame {
 		labelRegistro.setHorizontalAlignment(SwingConstants.LEFT);
 		btnRegistro.add(labelRegistro);
 		
+		/**
+		 * Boton de busqueda, con metodos para cambiar color al pasar el cursor.
+		 * Tambien con mouseCliked para mostrar la ventana de Busqueda.
+		 */
 		JPanel btnBusqueda = new JPanel();
 		btnBusqueda.addMouseListener(new MouseAdapter() {
 			@Override
@@ -148,6 +160,10 @@ public class MenuUsuario extends JFrame {
 		separator.setBounds(26, 219, 201, 2);
 		panelMenu.add(separator);
 		
+		/**
+		 * Boton de Cerrar la Sesion, JPanel que con tiene mousclicked para regresar a la ventana Login.
+		 * Metodos para cambiar de color al pasar el cursor.
+		 */
 		JPanel btnCerrarSesion = new JPanel();
 		btnCerrarSesion.addMouseListener(new MouseAdapter() {
 			@Override
@@ -183,6 +199,7 @@ public class MenuUsuario extends JFrame {
 		header.setBounds(0, 0, 944, 36);
 		contentPane.add(header);
 		
+		//Boton de Salir de la Aplicacion, Contiene Metodos para cambiar de color al pasar el cursor.
 		JPanel btnexit = new JPanel();
 		btnexit.addMouseListener(new MouseAdapter() {
 			@Override
@@ -270,7 +287,7 @@ public class MenuUsuario extends JFrame {
 	private void headerMousePressed(java.awt.event.MouseEvent evt) {
         xMouse = evt.getX();
         yMouse = evt.getY();
-    }//GEN-LAST:event_headerMousePressed
+    }
 
     private void headerMouseDragged(java.awt.event.MouseEvent evt) {
         int x = evt.getXOnScreen();

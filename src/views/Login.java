@@ -37,6 +37,7 @@ public class Login extends JFrame {
 	private JLabel lblAtras;
 
 	/**
+	 * Clase que se encarga de ser la ventana de Login del Usuario
 	 * Iniciar la aplicacion.
 	 */
 	public static void main(String[] args) {
@@ -306,7 +307,7 @@ public class Login extends JFrame {
 	 private void headerMousePressed(java.awt.event.MouseEvent evt) {
 	        xMouse = evt.getX();
 	        yMouse = evt.getY();
-	    }//GEN-LAST:event_headerMousePressed
+	    }
 
 	    private void headerMouseDragged(java.awt.event.MouseEvent evt) {
 	        int x = evt.getXOnScreen();

@@ -46,7 +46,8 @@ public class ReservasView extends JFrame {
 	private ReservasController reservasController;
 
 	/**
-	 * Launch the application.
+	 * Clase que se encarga de recibir los datos de la Reserva y guardarla en la base de datos.
+	 * Inicia la aplicacion 
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -62,7 +63,7 @@ public class ReservasView extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Contructor que crea la ventana ReservasView.
 	 */
 	public ReservasView() {
 		
@@ -214,6 +215,7 @@ public class ReservasView extends JFrame {
 		header.setBackground(Color.WHITE);
 		panel.add(header);
 		
+		//Boton para regresar.
 		JPanel btnAtras = new JPanel();
 		btnAtras.addMouseListener(new MouseAdapter() {
 			@Override
@@ -307,14 +309,17 @@ public class ReservasView extends JFrame {
 		txtFormaPago.setModel(new DefaultComboBoxModel(new String[] {"Tarjeta de Crédito", "Tarjeta de Débito", "Dinero en efectivo"}));
 		panel.add(txtFormaPago);
 
+		//Boton para segguir adelante con la reserva 
 		JPanel btnsiguiente = new JPanel();
 		btnsiguiente.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				//Comparacion si la fecha entrada es diferente a fecha salida  guarda la reserva
 				if (txtFechaEntrada.getDate() != null && txtFechaSalida.getDate() != null) {	
 					guardarReserva();
 					
 				} else {
+					//Mensaje si no todos los campos fueron completados
 					JOptionPane.showMessageDialog(null, "Debes llenar todos los campos.");
 				}
 			}						
@@ -334,22 +339,35 @@ public class ReservasView extends JFrame {
 
 
 	}
-		
+	
+	/**
+	 * Este metodo guarda una reserva en la base de datos y muestra un mensaje de exito.
+	 */		
 	private void guardarReserva() {
+		//Obtiene las fechas de entrada y salida del formulario.
 		String FechaE = ((JTextField)txtFechaEntrada.getDateEditor().getUiComponent()).getText();
 		String FechaS = ((JTextField)txtFechaSalida.getDateEditor().getUiComponent()).getText();
+		
+		//Crea un nuevo objeto Reservas con las fechas y los datos del formulario
 		Reservas nuevaReservas = new Reservas(java.sql.Date.valueOf(FechaE),java.sql.Date.valueOf(FechaS),txtValor.getText(),txtFormaPago.getSelectedItem().toString());
+		
+		//Guarda la reserva en la base de datos atraves del controlador.
 		reservasController.guardar(nuevaReservas);
 		
+		//Obtiene el id de la reserva guardada
 		int id = nuevaReservas.getId();
 		
+		//Mensaje de confirmacion con el ID de la Reserva.
 		JOptionPane.showMessageDialog(null, "Reserva exitosa, id: " + id);
 		
+		//Abre la ventana de Registro Huesped y cierrra la ventana actual.
 		RegistroHuesped huesped = new RegistroHuesped(id);
 		huesped.setVisible(true);
         dispose();				
 	}
 	
+	
+	//Calcula el valor de la resereva en funcion de los dias qeu se hospedara el huesped
 	private void calcularValor(JDateChooser fechaE, JDateChooser fechaS) {
 		if(fechaE.getDate() != null && fechaS.getDate() != null) {
 			Calendar inicio = fechaE.getCalendar();

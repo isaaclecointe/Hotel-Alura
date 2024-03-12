@@ -11,6 +11,14 @@ import java.util.List;
 
 import jdbc.modelo.Huespedes;
 
+
+/**
+ * 
+ *  DAO clase para manejar las operaciones de la base de datos relacionadas con los huespedes del hotel.
+ *  permite insertar, buscar, actualizar y eliminar huespedes en la base de datos.
+ *  
+ */
+
 public class HuespedesDAO {
 
 	private Connection connection;
